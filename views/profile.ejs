@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link rel="stylesheet" href="./profile.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <!-- Logo and Project Name -->
+        <div class="logo">
+          <a href="/"><img src="./logoImage.jpg" alt="Auth Project Logo" /></a>
+          <span>Auth Project</span>
+        </div>
+        <div class="nav-links">
+          <% if(!user) { %>
+          <a class="btn login" href="/login">Login</a>
+          <% } else { %>
+          <a class="btn login" href="/logout">Logout</a>
+          <% } %>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <h1>User Profile</h1>
+      <div class="profile-card">
+        <img
+          src="<%= user.picture %>"
+          alt="Profile Picture"
+          class="profile-picture"
+        />
+        <div class="profile-info">
+          <h2 id="name"><%= user.name %></h2>
+          <p id="email">Email : <%= user.email || "NA" %></p>
+          <p id="gender">Gender: <%= user.gender || "NA" %></p>
+          <p id="location">Location: <%= user.location || "NA" %></p>
+          <p id="dob">Date of Birth: <%= user.dob || "NA" %></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

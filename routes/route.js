@@ -6,8 +6,6 @@ const pageControllers = require("../controllers/page");
 const router = express.Router();
 
 router.get("/", pageControllers.getHomePage);
-router.get("/profile", requiresAuth(), (req, res) => {
-  res.send(JSON.stringify(req.oidc.user));
-});
+router.get("/profile", requiresAuth(), pageControllers.getProfile);
 
 module.exports = router;

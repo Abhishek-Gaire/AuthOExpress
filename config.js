@@ -1,4 +1,3 @@
-const { auth } = require("express-openid-connect");
 require("dotenv").config();
 const config = {
   authRequired: false,

@@ -16,8 +16,8 @@ app.use(express.static(path.join(__dirname, "public")));
 const pageRoute = require("./routes/route");
 const config = require("./config");
 
-app.use(pageRoute);
 app.use(auth(config));
+app.use(pageRoute);
 
 app.listen(3000, () => {
   console.log(`Server is running on http://localhost:3000`);

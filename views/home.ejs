@@ -14,10 +14,14 @@
         <!-- Logo and Project Name -->
         <div class="logo">
           <img src="./logoImage.jpg" alt="Auth Project Logo" />
-          <span>Auth Project</span>
+          <span>Auth0 Project</span>
         </div>
         <div class="nav-links">
+          <% if(!isAuthenticated) { %>
           <a class="btn login" href="/login">Login</a>
+          <% } else { %>
+          <a class="btn login" href="/logout">Logout</a>
+          <% } %>
         </div>
       </div>
     </nav>
@@ -25,7 +29,7 @@
     <!-- Main content -->
     <main class="main-content">
       <section class="description">
-        <h1>Welcome to Auth Project</h1>
+        <h1>Welcome to Auth0 Project</h1>
         <p>
           Our project offers a seamless way to log in and sign up using popular
           services like Facebook, Twitter, Google, LinkedIn, and GitHub. Powered
