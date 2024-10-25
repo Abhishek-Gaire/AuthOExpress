@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login To DYD</title>
+    <link rel="stylesheet" href="/login.css">
+    <link rel="icon" href="/logoImage.jpg">
+
+</head>
+<body>
+    
+    <a href="/"  id="logo"><img src="/logoImage.jpg" alt=""></a>
+  
+    <div class="container flex">
+        <div class="login flex">
+      
+        <form action="/login" method="POST">
+            <div id="head"><h1>Login</h1></div>
+
+            <div class="data flex">
+                
+                <input type="email" placeholder="Email" name="email">
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="data flex">
+                <input type="password" placeholder="Password" id="password" name="password">
+                <i class="fa-solid fa-eye-slash" id="togglePassword"></i>
+            </div>
+        
+            <p id="forgot">
+                    <a href="/forgot-password">Forgot your password?</a>
+            </p>
+            <div id="button"><button type="submit">Login</button></div>
+
+            
+                <div class="signup-done">
+                    <p>Don't have an account? <a href="/register">Register</a> </p>
+                </div>
+            
+            
+        </form>
+    </div>
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            var passwordField = document.getElementById('password');
+            var icon = this;
+    
+            // Toggle password field visibility
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            } else {
+                passwordField.type = "password";
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            }
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/fd6ad446c7.js" crossorigin="anonymous"></script>
+</body>
+</html>

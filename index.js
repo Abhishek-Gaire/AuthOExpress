@@ -2,7 +2,8 @@ const path = require("path");
 
 const express = require("express");
 const bodyParser = require("body-parser");
-const { auth } = require("express-openid-connect");
+const client = require("./config/db");
+// const { auth } = require("express-openid-connect");
 
 const app = express();
 
@@ -14,11 +15,15 @@ app.set("views", "views");
 app.use(express.static(path.join(__dirname, "public")));
 
 const pageRoute = require("./routes/route");
-const config = require("./config");
+// const config = require("./config/config");
 
-app.use(auth(config));
+// this "auth" provides /login and /logout route
+// app.use(auth(config));
+
 app.use(pageRoute);
 
-app.listen(3000, () => {
-  console.log(`Server is running on http://localhost:3000`);
-});
+client.connect().then(
+  app.listen(3000, () => {
+    console.log(`Server is running on http://localhost:3000`);
+  })
+);

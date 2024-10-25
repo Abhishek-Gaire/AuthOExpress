@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up To DYD</title>
+    <link rel="stylesheet" href="/signup.css" />
+    <link rel="icon" href="/logoImage.jpg" />
+  </head>
+
+  <body>
+    <a href="/" id="logo"><img src="/logoImage.jpg" alt="" /></a>
+    <div class="container flex">
+      <div class="login flex">
+        <form action="/signup" method="POST">
+          <div id="head"><h1>Signup</h1></div>
+          <div class="data flex">
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              required
+            /><br />
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="data flex">
+            <input type="email" placeholder="Email" name="email" />
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div class="data flex eye">
+            <input
+              type="password"
+              placeholder="Password"
+              id="passwordInput"
+              name="password"
+            />
+            <i class="fa-solid fa-eye-slash" id="togglePassword"></i>
+          </div>
+
+          <div id="button"><button type="submit">Signup</button></div>
+          <div id="accbot">
+            <p>Already have an account? <a href="/login">Login</a></p>
+          </div>
+        </form>
+        <div class="social-login">
+          <a href="#" data-hover="Continue with Google"
+            ><i class="fab fa-google"></i
+          ></a>
+          <a href="#" data-hover="Continue with Facebook"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="#" data-hover="Continue with GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="#" data-hover="Continue with Twitter"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="#" data-hover="Continue with LinkedIn"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/fd6ad446c7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const togglePassword = document.getElementById("togglePassword");
+        const passwordInput = document.getElementById("passwordInput");
+
+        togglePassword.addEventListener("click", () => {
+          if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            togglePassword.classList.remove("fa-eye-slash");
+            togglePassword.classList.add("fa-eye");
+          } else {
+            passwordInput.type = "password";
+            togglePassword.classList.remove("fa-eye");
+            togglePassword.classList.add("fa-eye-slash");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,12 +1,19 @@
 exports.getHomePage = async (req, res) => {
+  const isAuthenticated = false;
   return res.render("home", {
-    isAuthenticated: req.oidc.isAuthenticated(),
+    isAuthenticated,
   });
 };
 
-exports.getProfile = async (req, res, next) => {
-  console.log(req.oidc.user);
+exports.getLoginPage = async (req, res, next) => {
+  return res.render("login");
+};
 
+exports.getRegisterPage = async (req, res, next) => {
+  return res.render("register");
+};
+
+exports.getProfile = async (req, res, next) => {
   return res.render("profile", {
     user: req.oidc.user,
   });
